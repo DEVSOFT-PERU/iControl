@@ -276,7 +276,7 @@
 			</li>
 			 -->
 
-			 <!-- Administracion y Control -->
+			<!-- Administracion y Control -->
 			<li class="dropdown mega-menu mega-menu-wide">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-stars position-left"></i> Administración y Control <span class="caret"></span></a>
 
@@ -291,8 +291,6 @@
 										<a href="#"><i class="icon-spinner10 spinner position-left"></i> Velocity animations</a>
 										<ul>
 											<li><a href="animations_velocity_basic.html">Basic usage</a></li>
-											<li><a href="animations_velocity_ui.html">UI pack effects</a></li>
-											<li><a href="animations_velocity_examples.html">Advanced examples</a></li>
 										</ul>
 									</li>
 									<li>
@@ -303,9 +301,6 @@
 												<ul>
 													<li><a href="maps_google_basic.html">Basics</a></li>
 													<li><a href="maps_google_controls.html">Controls</a></li>
-													<li><a href="maps_google_markers.html">Markers</a></li>
-													<li><a href="maps_google_drawings.html">Map drawings</a></li>
-													<li><a href="maps_google_layers.html">Layers</a></li>
 												</ul>
 											</li>
 											<li><a href="maps_vector.html">Vector maps</a></li>
@@ -360,7 +355,7 @@
 									<li>
 										<a href="#"><i class="icon-graph"></i> Echarts library</a>
 										<ul>
-											<li><a href="echarts_lines_areas.html">Lines and areas</a></li>
+											<li><a href="{{ route('produccion-show') }}">Lines and areas</a></li>
 											<li><a href="echarts_columns_waterfalls.html">Columns and waterfalls</a></li>
 											<li><a href="echarts_bars_tornados.html">Bars and tornados</a></li>
 											<li><a href="echarts_scatter.html">Scatter charts</a></li>

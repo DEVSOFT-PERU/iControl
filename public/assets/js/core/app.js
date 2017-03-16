@@ -18,8 +18,9 @@ $(window).on('load', function() {
 
 $(function() {
 
-    var i = 'a[href="'+ window.location.href +'"]' ;
-    $('body').find(i).parent('li').addClass('active');
+    //Activar Elemento Seleccionado por url
+    var i = 'a[href="' + window.location.href + '"]';
+    $('body').find(i).parents('li').addClass('active');
 
     // Disable CSS transitions on page load
     $('body').addClass('no-transitions');
@@ -122,7 +123,7 @@ $(function() {
 
     // Attach drill down menu to menu list with child levels
     $('.has-children').dcDrilldown({
-        defaultText: 'Back to parent',
+        defaultText: 'Regresar',
         saveState: true
     });
 

@@ -288,7 +288,7 @@
           <li><a href="#"><span class="badge badge-warning pull-right">58</span> <i class="icon-comment-discussion"></i> Messages</a></li>
           <li class="divider"></li>
           <li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
-          <li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+          <li><a href="{{ route('logout') }}" id="submitLogout"><i class="icon-switch2"></i> Cerrar Sesión</a></li>
         </ul>
       </li>
       <!-- End Opciones del Usuario-->

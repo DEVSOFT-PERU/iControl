@@ -18,6 +18,7 @@ class UserTableSeeder extends Seeder
       \App\User::create([ 'name'=>'Administrador',
                           'email'=>'admin@devsoft.pe',
                           'password'=>'$2y$10$PqArBA8L4TWLs2Cjn0UMLOf23fsYSLdPz4hZAHKSbZDNKGMnPkOu2']);
-      //factory(\App\Documento::class)->times(100)->create();
+                          
+      factory(\App\User::class)->times(100)->create();
     }
 }

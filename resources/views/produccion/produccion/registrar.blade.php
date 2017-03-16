@@ -2,28 +2,17 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
 
-	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-	<link href="{{ URL::asset('assets/css/icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ URL::asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ URL::asset('assets/css/core.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ URL::asset('assets/css/components.css') }}" rel="stylesheet" type="text/css">
-	<link href="{{ URL::asset('assets/css/colors.css') }}" rel="stylesheet" type="text/css">
-	<!-- /global stylesheets -->
+	@include('meta.avanzada', array('title' => config('app.name', 'si no') . ' | Con sueños ',
+																	'description' => 'Empresa de jovenes empredendores ',
+																	'author' => '',
+																	'keywords' => '',
+																	'publisher' => '',
+																	'image' => '',
+																	'create_at' => '2013-09-17T05:59:00+01:00',
+																	'update_at' => '2013-09-16T19:08:47+01:00'))
 
-	<!-- Core JS files -->
-	<script type="text/javascript" src="{{ URL::asset('assets/js/plugins/loaders/pace.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('assets/js/core/libraries/jquery.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('assets/js/core/libraries/bootstrap.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('assets/js/plugins/loaders/blockui.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('assets/js/plugins/ui/nicescroll.min.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('assets/js/plugins/ui/drilldown.js') }}"></script>
-	<!-- /core JS files -->
+	@include('overall.core')
 
 	<!-- Theme JS files -->
 	<script type="text/javascript" src="{{ URL::asset('assets/js/plugins/forms/selects/select2.min.js') }}"></script>
@@ -37,7 +26,8 @@
 
 <body>
 
-	@include('overall.topnav') @include('overall.nav')
+	@include('overall.topnav')
+	@include('overall.nav')
 
 
 	<!-- Page header -->
@@ -66,15 +56,7 @@
 	<!-- /page header -->
 
 
-	<!-- Page container -->
-	<div class="page-container">
-
-		<!-- Page content -->
-		<div class="page-content">
-
-			<!-- Main content -->
-			<div class="content-wrapper">
-
+@component('inc.container')
 
 				<!-- Fieldset legend -->
 				<div class="row">
@@ -398,16 +380,7 @@
 					</div>
 				</form>
 				<!-- /2 columns form -->
-
-			</div>
-			<!-- /main content -->
-
-		</div>
-		<!-- /page content -->
-
-	</div>
-	<!-- /page container -->
-
+@endcomponent
 
 	<!-- Footer -->
 	<div class="footer text-muted">

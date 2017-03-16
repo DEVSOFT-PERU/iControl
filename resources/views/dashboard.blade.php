@@ -2,46 +2,32 @@
 <html lang="{{ config('app.locale') }}">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- App Favicon icon -->
-	<link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon_1.ico') }}">
-	<!-- CSRF Token -->
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-	<!-- App Title -->
-	<title>{{ config('app.name', 'iControl - Inicio') }}</title>
 
+	@include('meta.avanzada', array('title' => config('app.name', 'si no') . ' | Con sueños ',
+																	'description' => 'Empresa de jovenes empredendores ',
+																	'author' => '',
+																	'keywords' => '',
+																	'publisher' => '',
+																	'image' => '',
+																	'create_at' => '2013-09-17T05:59:00+01:00',
+																	'update_at' => '2013-09-16T19:08:47+01:00'))
 
-	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
-	<!-- /global stylesheets -->
-
-	<!-- Core JS files -->
-	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
-	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/ui/nicescroll.min.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/ui/drilldown.js"></script>
-	<!-- /core JS files -->
+	@include('overall.core')
 
 	<!-- Theme JS files -->
-	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="{{ URL::asset('assets/js/core/app.js') }}"></script>
 	<!-- /theme JS files -->
+
+	<!-- Devsoft JS files -->
+	<script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
+	<!-- /Devsoft JS files -->
 
 </head>
 
 <body>
 
-	@include('overall.topnav') @include('overall.nav')
-
+	@include('overall.topnav')
+	@include('overall.nav')
 
 	<!-- Page header -->
 	<div class="page-header">
@@ -65,36 +51,23 @@
 	</div>
 	<!-- /page header -->
 
+	@component('inc.container')
 
-	<!-- Page container -->
-	<div class="page-container">
+		@component('inc.panel', array('titulo'=>'Welcome to iControl'))
+				Hola
+		@endcomponent
 
-		<!-- Page content -->
-		<div class="page-content">
-
-			<!-- Main content -->
-			<div class="content-wrapper">
-
-				@component('inc.panel') @slot('titulo') Welcome to iControl @endslot Hola @endcomponent
-				<!-- Dashboard content -->
-				<div class="row">
-					<div class="col-lg-5">
-
-					</div>
-				</div>
-				<!-- /dashboard content -->
+		<!-- Dashboard content -->
+		<div class="row">
+			<div class="col-lg-5">
 
 			</div>
-			<!-- /main content -->
-
 		</div>
-		<!-- /page content -->
+		<!-- /dashboard content -->
 
-	</div>
-	<!-- /page container -->
+	@endcomponent
 
 	@include('overall.footer')
-
 
 </body>
 
