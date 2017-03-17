@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Produccion;
 
+use App\User;
+use App\Mail\Welcome;
+use Illuminate\Support\Facades\Mail;
+
 use App\Produccion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -25,6 +29,9 @@ class ProduccionController extends Controller
      */
     public function create()
     {
+        $usuario = User::find(1);
+        Mail::to('mark131296@gmail.com')->send(new Welcome($usuario));
+
         return view('produccion.produccion.registrar');
     }
 
