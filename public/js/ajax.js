@@ -11,11 +11,10 @@ function request(data, wait) {
             beforeSend: wait()
         })
         .always(function(data, textStatus, jqXHR) {
-            // remove loading image maybe
+            console.info(textStatus);
         })
-        .fail(function(data, textStatus, jqXHR) {
-            // handle request failures
-            console.group('Ajax Fail:::::::::::::::::::::::::::::::::::::::');
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            console.group('Ajax Fail' + ':'.repeat(10));
             console.error(textStatus);
             console.groupEnd();
         });
@@ -25,7 +24,7 @@ function request(data, wait) {
 
 
 var dFormulario = new FormData();
-dataForm.append('email', '');
+dFormulario.append('email', '');
 
 
 var registrarUsuario = request({
@@ -35,7 +34,7 @@ var registrarUsuario = request({
 
 });
 
-registrarUsuario.done(function(data) {
+registrarUsuario.done(function(data, textStatus, jqXHR) {
     console.group('Ajax Done:::::::::::::::::::::::::::::::::::::::');
     console.info(data);
     console.groupEnd();
